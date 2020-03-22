@@ -2,5 +2,5 @@
   "jwtPrivateKey": "unsecureKey",
   "db": "yazmin_db",
   "port": "3900",
-  "requiresAuth": true
+  "requiresAuth": false
 }
