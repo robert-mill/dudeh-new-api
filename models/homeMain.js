@@ -10,7 +10,7 @@ const homeMainSchema = new mongoose.Schema({
   },
   body: {
     type: String,
-    remoquired: true,
+    required: true,
     minlength: 5
   }
 });
@@ -24,7 +24,7 @@ function validateHomeMain(home) {
       .max(50)
       .required(),
     body: Joi.string()
-      .minlength(5)
+      .min(5)
       .required()
   };
 
