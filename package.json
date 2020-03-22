@@ -1,0 +1,22 @@
+{
+  "name": "yazmin-wood-api",
+  "version": "1.0.0",
+  "description": "this is the backened for Yazmin wood",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.3.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "joi": "^14.3.1",
+    "joi-browser": "^13.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.5",
+    "winston": "^3.2.1"
+  }
+}
