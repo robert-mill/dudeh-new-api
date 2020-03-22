@@ -2,7 +2,7 @@ const Joi = require("joi");
 const mongoose = require("mongoose");
 
 const homeMainSchema = new mongoose.Schema({
-  heaading: {
+  heading: {
     type: String,
     required: true,
     minlength: 5,
