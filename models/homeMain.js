@@ -1,33 +1,36 @@
-const config = require("config");
-const jwt = require("jsonwebtoken");
 const Joi = require("joi");
 const mongoose = require("mongoose");
 
 const homeMainSchema = new mongoose.Schema({
-  heading: {
+  heaading: {
     type: String,
     required: true,
     minlength: 5,
-    maxlength: 200
+    maxlength: 50
   },
   body: {
     type: String,
-    required: true,
+    remoquired: true,
     minlength: 5
   }
 });
-HomeMain = mongoose.model("HomeMain", homeMainSchema);
-function validateMainHome(home) {
+
+const HomeMain = mongoose.model("HomeMain", homeMainSchema);
+
+function validateHomeMain(home) {
   const schema = {
     heading: Joi.string()
       .min(5)
-      .max(200)
+      .max(50)
       .required(),
     body: Joi.string()
-      .min(5)
+      .minlength(5)
       .required()
   };
+
   return Joi.validate(home, schema);
 }
+
+exports.homeMainSchema = homeMainSchema;
 exports.HomeMain = HomeMain;
-exports.validate = validateMainHome;
+exports.validate = validateHomeMain;

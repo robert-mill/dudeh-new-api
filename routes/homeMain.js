@@ -1,14 +1,16 @@
+const validateObjectId = require("../middleware/validateObjectId");
 const auth = require("../middleware/auth");
-const bcrypt = require("bcrypt");
-const _ = require("lodash");
+const admin = require("../middleware/admin");
 const { HomeMain, validate } = require("../models/homeMain");
+const mongoose = require("mongoose");
 const express = require("express");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  const homeMain = await HomeMain.find();
-  res.send(homeMain).select("-__v");
+  const homes = await HomeMain.find().select("-__v");
+  res.send(homes);
 });
+
 router.post("/", auth, async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
