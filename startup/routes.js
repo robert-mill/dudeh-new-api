@@ -1,12 +1,12 @@
 const express = require("express");
-const genres = require("../routes/homeMain");
+const homesMain = require("../routes/homeMain");
 const users = require("../routes/users");
 const auth = require("../routes/auth");
 const error = require("../middleware/error");
 
 module.exports = function(app) {
   app.use(express.json());
-  app.use("/api/genres", genres);
+  app.use("/api/homesMain", homesMain);
   app.use("/api/users", users);
   app.use("/api/auth", auth);
   //app.use("/api/returns", returns);
