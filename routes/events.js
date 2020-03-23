@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   const events = await Events.find().select("-__v");
-  res.send(homes);
+  res.send(events);
 });
 
 router.post("/", auth, async (req, res) => {
