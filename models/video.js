@@ -15,8 +15,7 @@ const videoSchema = new mongoose.Schema({
     maxlength: 50
   },
   body: {
-    type: String,
-    minlength: 5
+    type: String
   }
 });
 
