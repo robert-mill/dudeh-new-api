@@ -1,5 +1,5 @@
 const express = require("express");
-const about = require("../routes/about");
+const abouts = require("../routes/about");
 const homeMain = require("../routes/homeMain");
 const events = require("../routes/events");
 const users = require("../routes/users");
@@ -9,7 +9,7 @@ const error = require("../middleware/error");
 
 module.exports = function(app) {
   app.use(express.json());
-  app.use("/api/abouts", about);
+  app.use("/api/abouts", abouts);
   app.use("/api/homeMain", homeMain);
   app.use("/api/events", events);
   app.use("/api/users", users);
