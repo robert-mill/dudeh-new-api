@@ -16,7 +16,6 @@ const videoSchema = new mongoose.Schema({
   },
   body: {
     type: String,
-    required: true,
     minlength: 5
   }
 });
@@ -26,7 +25,7 @@ const Videos = mongoose.model("Videos", videoSchema);
 function validateVideo(video) {
   const schema = {
     heading: Joi.string()
-      .min(5)
+      .min(2)
       .max(50)
       .required(),
     video: Joi.string()
