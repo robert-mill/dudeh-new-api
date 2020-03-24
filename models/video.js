@@ -30,12 +30,12 @@ function validateVideo(video) {
       .max(50)
       .required(),
     video: Joi.string()
-      .min(2)
+      .min(5)
       .max(50)
       .required(),
     body: Joi.string()
-      .min(5)
-      .required()
+      .allow("")
+      .optional()
   };
 
   return Joi.validate(video, schema);
