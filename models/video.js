@@ -1,7 +1,7 @@
 const Joi = require("joi");
 const mongoose = require("mongoose");
 
-const eventSchema = new mongoose.Schema({
+const videoSchema = new mongoose.Schema({
   heading: {
     type: String,
     required: true,
@@ -21,9 +21,9 @@ const eventSchema = new mongoose.Schema({
   }
 });
 
-const Events = mongoose.model("Events", eventSchema);
+const Videos = mongoose.model("Videos", videoSchema);
 
-function validateEvent(event) {
+function validateVideo(video) {
   const schema = {
     heading: Joi.string()
       .min(5)
@@ -38,9 +38,9 @@ function validateEvent(event) {
       .required()
   };
 
-  return Joi.validate(event, schema);
+  return Joi.validate(video, schema);
 }
 
-exports.eventSchema = eventSchema;
-exports.Events = Events;
-exports.validate = validateEvent;
+exports.videoSchema = videoSchema;
+exports.Videos = Videos;
+exports.validate = validateVideo;
