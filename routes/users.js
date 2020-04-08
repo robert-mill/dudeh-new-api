@@ -9,6 +9,14 @@ router.get("/me", auth, async (req, res) => {
   const user = await User.findById(req.user._id).select("-password");
   res.send(user);
 });
+router.get("/discover", async (req, res) => {
+  const users = await User.find();
+  res.send(users);
+});
+router.get("/", async (req, res) => {
+  const users = await User.find();
+  res.send(users);
+});
 
 router.post("/", async (req, res) => {
   const { error } = validate(req.body);
