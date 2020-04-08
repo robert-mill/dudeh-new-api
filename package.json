@@ -12,6 +12,9 @@
   "keywords": [],
   "author": "RobertMill",
   "license": "ISC",
+  "engines": {
+    "node": ">=13.7.0"
+  },
   "dependencies": {
     "bcrypt": "^4.0.1",
     "config": "^1.29.4",
