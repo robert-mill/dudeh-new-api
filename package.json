@@ -1,14 +1,16 @@
 {
-  "name": "vidly",
+  "name": "yazmin-wood",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "jest --watchAll --verbose"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "keywords": [],
-  "author": "",
+  "author": "RobertMill",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^4.0.1",

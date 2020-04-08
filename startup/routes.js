@@ -7,7 +7,7 @@ const video = require("../routes/video");
 const auth = require("../routes/auth");
 const error = require("../middleware/error");
 
-module.exports = function(app) {
+module.exports = function (app) {
   app.use(express.json());
   app.use("/api/abouts", abouts);
   app.use("/api/homeMain", homeMain);

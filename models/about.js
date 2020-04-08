@@ -4,28 +4,29 @@ const mongoose = require("mongoose");
 const aboutSchema = new mongoose.Schema({
   heading: {
     type: String,
-    required: true,
     minlength: 5,
-    maxlength: 50
+    maxlength: 50,
   },
   body: {
     type: String,
-    required: true,
-    minlength: 5
-  }
+    minlength: 5,
+  },
+  aboutImage: {
+    type: String,
+  },
+  aboutImageID: {
+    type: String,
+  },
 });
 
 const Abouts = mongoose.model("Abouts", aboutSchema);
 
 function validateAbout(about) {
   const schema = {
-    heading: Joi.string()
-      .min(5)
-      .max(50)
-      .required(),
-    body: Joi.string()
-      .min(5)
-      .required()
+    heading: Joi.string().min(5).required(),
+    body: Joi.string().min(5).required(),
+    aboutImage: Joi.string().allow("").optional(),
+    aboutImageID: Joi.string().allow("").optional(),
   };
 
   return Joi.validate(about, schema);

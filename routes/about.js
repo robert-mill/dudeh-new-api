@@ -17,7 +17,9 @@ router.post("/", auth, async (req, res) => {
 
   let about = new Abouts({
     heading: req.body.heading,
-    body: req.body.body
+    body: req.body.body,
+    aboutImage: req.body.aboutImage,
+    aboutImageID: req.body.aboutImageID,
   });
   about = await about.save();
 
@@ -30,9 +32,14 @@ router.put("/:id", [auth, validateObjectId], async (req, res) => {
 
   const about = await Abouts.findByIdAndUpdate(
     req.params.id,
-    { heading: req.body.heading, body: req.body.body },
     {
-      new: true
+      heading: req.body.heading,
+      body: req.body.body,
+      aboutImage: req.body.aboutImage,
+      aboutImageID: req.body.aboutImageID,
+    },
+    {
+      new: true,
     }
   );
 
