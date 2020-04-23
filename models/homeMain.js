@@ -6,26 +6,21 @@ const homeMainSchema = new mongoose.Schema({
     type: String,
     required: true,
     minlength: 5,
-    maxlength: 50
+    maxlength: 50,
   },
   body: {
     type: String,
     required: true,
-    minlength: 5
-  }
+    minlength: 5,
+  },
 });
 
 const HomeMain = mongoose.model("HomeMain", homeMainSchema);
 
 function validateHomeMain(home) {
   const schema = {
-    heading: Joi.string()
-      .min(5)
-      .max(50)
-      .required(),
-    body: Joi.string()
-      .min(5)
-      .required()
+    heading: Joi.string().allow("").optional(),
+    body: Joi.string().allow("").optional(),
   };
 
   return Joi.validate(home, schema);
