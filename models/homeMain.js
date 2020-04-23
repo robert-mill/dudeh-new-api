@@ -4,14 +4,15 @@ const mongoose = require("mongoose");
 const homeMainSchema = new mongoose.Schema({
   heading: {
     type: String,
-    required: true,
-    minlength: 5,
-    maxlength: 50,
   },
   body: {
     type: String,
-    required: true,
-    minlength: 5,
+  },
+  image: {
+    type: String,
+  },
+  imageID: {
+    type: String,
   },
 });
 
@@ -21,6 +22,8 @@ function validateHomeMain(home) {
   const schema = {
     heading: Joi.string().allow("").optional(),
     body: Joi.string().allow("").optional(),
+    image: Joi.string().allow("").optional(),
+    imageID: Joi.string().allow("").optional(),
   };
 
   return Joi.validate(home, schema);
