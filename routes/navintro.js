@@ -18,6 +18,8 @@ router.post("/", auth, async (req, res) => {
   let navintro = new NavIntros({
     heading: req.body.heading,
     body: req.body.body,
+    image: req.body.image,
+    imageID: req.body.imageID,
   });
   navintro = await navintro.save();
 
@@ -33,6 +35,8 @@ router.put("/:id", [auth, validateObjectId], async (req, res) => {
     {
       heading: req.body.heading,
       body: req.body.body,
+      image: req.body.image,
+      imageID: req.body.imageID,
     },
     {
       new: true,
