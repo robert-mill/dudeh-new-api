@@ -8,7 +8,7 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  const events = await Events.find().select("-__v");
+  const events = await Events.find();
   res.send(events);
 });
 
@@ -27,10 +27,9 @@ router.post("/", auth, async (req, res) => {
   res.send(event);
 });
 
-router.put("/:id", [auth, validateObjectId], async (req, res) => {
+router.put("/:id", [auth], async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
-
   const event = await Events.findByIdAndUpdate(
     req.params.id,
     {
@@ -39,32 +38,24 @@ router.put("/:id", [auth, validateObjectId], async (req, res) => {
       image: req.body.image,
       imageID: req.body.imageID,
     },
-    {
-      new: true,
-    }
+    { new: true }
   );
-
   if (!event)
     return res.status(404).send("The event with the given ID was not found.");
-
   res.send(event);
 });
 
-router.delete("/:id", [auth, admin, validateObjectId], async (req, res) => {
+router.delete("/:id", [auth, admin], async (req, res) => {
   const event = await Events.findByIdAndRemove(req.params.id);
-
   if (!event)
     return res.status(404).send("The event with the given ID was not found.");
-
   res.send(event);
 });
 
 router.get("/:id", validateObjectId, async (req, res) => {
   const event = await Events.findById(req.params.id).select("-__v");
-
   if (!event)
     return res.status(404).send("The event with the given ID was not found.");
-
   res.send(event);
 });
 
