@@ -25,7 +25,6 @@ function validateEvent(event) {
     image: Joi.string().allow("").optional(),
     imageID: Joi.string().allow("").optional(),
   };
-  ID;
 
   return Joi.validate(event, schema);
 }
