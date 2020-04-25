@@ -17,10 +17,10 @@ router.post("/", auth, async (req, res) => {
   if (error) return res.status(400).send(error.details[0].message);
 
   let event = new Events({
-    heading: req.body.heading,
-    body: req.body.body,
-    image: req.body.image,
-    imageID: req.body.imageID,
+    headingtxt: req.body.headingtxt,
+    bodytxt: req.body.bodytxt,
+    imagemain: req.body.imagemain,
+    imagemainID: req.body.imagemainID,
   });
   event = await event.save();
 
@@ -33,10 +33,10 @@ router.put("/:id", [auth], async (req, res) => {
   const event = await Events.findByIdAndUpdate(
     req.params.id,
     {
-      heading: req.body.heading,
-      body: req.body.body,
-      image: req.body.image,
-      imageID: req.body.imageID,
+      headingtxt: req.body.headingtxt,
+      bodytxt: req.body.bodytxt,
+      imagemain: req.body.imagemain,
+      imagemainID: req.body.imagemainID,
     },
     { new: true }
   );

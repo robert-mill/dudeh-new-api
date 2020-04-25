@@ -2,16 +2,16 @@ const Joi = require("joi");
 const mongoose = require("mongoose");
 
 const eventSchema = new mongoose.Schema({
-  heading: {
+  headingtxt: {
     type: String,
   },
-  body: {
+  bodytxt: {
     type: String,
   },
-  image: {
+  imagemain: {
     type: String,
   },
-  imageID: {
+  imagemainID: {
     type: String,
   },
 });
@@ -20,10 +20,10 @@ const Events = mongoose.model("Events", eventSchema);
 
 function validateEvent(event) {
   const schema = {
-    heading: Joi.string().allow("").optional(),
-    body: Joi.string().allow("").optional(),
-    image: Joi.string().allow("").optional(),
-    imageID: Joi.string().allow("").optional(),
+    headingtxt: Joi.string().allow("").optional(),
+    bodytxt: Joi.string().allow("").optional(),
+    imagemain: Joi.string().allow("").optional(),
+    imagemainID: Joi.string().allow("").optional(),
   };
   ID;
 
