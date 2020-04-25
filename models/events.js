@@ -4,29 +4,28 @@ const mongoose = require("mongoose");
 const eventSchema = new mongoose.Schema({
   heading: {
     type: String,
-    required: true,
-    minlength: 5,
-    maxlength: 50
   },
   body: {
     type: String,
-    required: true,
-    minlength: 5
-  }
+  },
+  image: {
+    type: String,
+  },
+  imageID: {
+    type: String,
+  },
 });
 
 const Events = mongoose.model("Events", eventSchema);
 
 function validateEvent(event) {
   const schema = {
-    heading: Joi.string()
-      .min(5)
-      .max(50)
-      .required(),
-    body: Joi.string()
-      .min(5)
-      .required()
+    heading: Joi.string().allow("").optional(),
+    body: Joi.string().allow("").optional(),
+    image: Joi.string().allow("").optional(),
+    imageID: Joi.string().allow("").optional(),
   };
+  ID;
 
   return Joi.validate(event, schema);
 }
