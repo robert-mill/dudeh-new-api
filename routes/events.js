@@ -1,8 +1,9 @@
-const validateObjectId = require("../middleware/validateObjectId");
 const auth = require("../middleware/auth");
+const validateObjectId = require("../middleware/validateObjectId");
 const admin = require("../middleware/admin");
+const bcrypt = require("bcrypt");
+const _ = require("lodash");
 const { Events, validate } = require("../models/events");
-const mongoose = require("mongoose");
 const express = require("express");
 const router = express.Router();
 
