@@ -19,7 +19,6 @@ router.post("/", auth, async (req, res) => {
   let testimonial = new Testimonials({
     heading: req.body.heading,
     body: req.body.body,
-    videoLink: req.body.videoLink,
   });
   testimonial = await testimonial.save();
 
@@ -34,7 +33,6 @@ router.put("/:id", [auth], async (req, res) => {
     {
       heading: req.body.heading,
       body: req.body.body,
-      videoLink: req.body.videoLink,
     },
     { new: true }
   );
