@@ -24,6 +24,6 @@ function validateAbout(contact) {
   return Joi.validate(contact, schema);
 }
 
-exports.contactSchema = acontactSchema;
+exports.contactSchema = contactSchema;
 exports.Contacts = Contacts;
 exports.validate = validateAbout;
