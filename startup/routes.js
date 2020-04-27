@@ -3,6 +3,7 @@ const abouts = require("../routes/about");
 const contacts = require("../routes/contact");
 const contactRequest = require("../routes/contactRequest");
 const calendar = require("../routes/calendar");
+const gallery = require("../routes/gallery");
 const homeMain = require("../routes/homeMain");
 const events = require("../routes/events");
 const users = require("../routes/users");
@@ -18,6 +19,7 @@ module.exports = function (app) {
   app.use("/api/contacts", contacts);
   app.use("/api/contactRequest", contactRequest);
   app.use("/api/calendar", calendar);
+  app.use("/api/gallery", gallery);
   app.use("/api/homeMain", homeMain);
   app.use("/api/navintro", navintro);
   app.use("/api/events", events);
