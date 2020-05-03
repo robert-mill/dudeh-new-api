@@ -8,6 +8,7 @@ const homeMain = require("../routes/homeMain");
 const events = require("../routes/events");
 const users = require("../routes/users");
 const navintro = require("../routes/navintro");
+const newsArticle = require("../routes/newsArticle");
 const testimonials = require("../routes/testimonials");
 const videos = require("../routes/videos");
 const auth = require("../routes/auth");
@@ -22,6 +23,7 @@ module.exports = function (app) {
   app.use("/api/gallery", gallery);
   app.use("/api/homeMain", homeMain);
   app.use("/api/navintro", navintro);
+  app.use("/api/newsArticle", newsArticle);
   app.use("/api/events", events);
   app.use("/api/users", users);
   app.use("/api/testimonials", testimonials);
