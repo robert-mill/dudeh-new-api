@@ -15,20 +15,20 @@ router.post("/", auth, async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  let homeMain = new NewsArticle({
+  let newsArticle = new NewsArticle({
     heading: req.body.heading,
     nenwsArticle: req.body.nenwsArticle,
   });
-  homeMain = await homeMain.save();
+  newsArticle = await newsArticle.save();
 
-  res.send(homeMain);
+  res.send(newsArticle);
 });
 
 router.put("/:id", [auth, validateObjectId], async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  const homeMain = await NewsArticle.findByIdAndUpdate(
+  const newsArticle = await NewsArticle.findByIdAndUpdate(
     req.params.id,
     { heading: req.body.heading, nenwsArticle: req.body.nenwsArticle },
     {
@@ -36,34 +36,34 @@ router.put("/:id", [auth, validateObjectId], async (req, res) => {
     }
   );
 
-  if (!homeMain)
+  if (!newsArticle)
     return res
       .status(404)
-      .send("The homeMain with the given ID was not found.");
+      .send("The newsArticle with the given ID was not found.");
 
-  res.send(homeMain);
+  res.send(newsArticle);
 });
 
 router.delete("/:id", [auth, admin, validateObjectId], async (req, res) => {
-  const homeMain = await NewsArticle.findByIdAndRemove(req.params.id);
+  const newsArticle = await NewsArticle.findByIdAndRemove(req.params.id);
 
-  if (!homeMain)
+  if (!newsArticle)
     return res
       .status(404)
-      .send("The homeMain with the given ID was not found.");
+      .send("The newsArticle with the given ID was not found.");
 
-  res.send(homeMain);
+  res.send(newsArticle);
 });
 
 router.get("/:id", validateObjectId, async (req, res) => {
-  const homeMain = await NewsArticle.findById(req.params.id).select("-__v");
+  const newsArticle = await NewsArticle.findById(req.params.id).select("-__v");
 
-  if (!homeMain)
+  if (!newsArticle)
     return res
       .status(404)
-      .send("The homeMain with the given ID was not found.");
+      .send("The newsArticle with the given ID was not found.");
 
-  res.send(homeMain);
+  res.send(newsArticle);
 });
 
 module.exports = router;
