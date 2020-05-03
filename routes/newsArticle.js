@@ -17,7 +17,7 @@ router.post("/", auth, async (req, res) => {
 
   let newsArticle = new NewsArticle({
     heading: req.body.heading,
-    nenwsArticle: req.body.nenwsArticle,
+    newsArticle: req.body.newsArticle,
   });
   newsArticle = await newsArticle.save();
 
@@ -30,7 +30,7 @@ router.put("/:id", [auth, validateObjectId], async (req, res) => {
 
   const newsArticle = await NewsArticle.findByIdAndUpdate(
     req.params.id,
-    { heading: req.body.heading, nenwsArticle: req.body.nenwsArticle },
+    { heading: req.body.heading, newsArticle: req.body.newsArticle },
     {
       new: true,
     }
