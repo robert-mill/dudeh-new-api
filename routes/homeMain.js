@@ -35,7 +35,7 @@ router.put("/:id", [auth, validateObjectId], async (req, res) => {
     {
       heading: req.body.heading,
       body: req.body.body,
-      mage: req.body.image,
+      image: req.body.image,
       imageID: req.body.imageID,
     },
     {
