@@ -7,7 +7,7 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  const newsArticles = await ImageBlock.find().select("-__v");
+  const imageBlocks = await ImageBlock.find().select("-__v");
   res.send(imageBlocks);
 });
 
