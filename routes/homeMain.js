@@ -17,7 +17,9 @@ router.post("/", auth, async (req, res) => {
 
   let homeMain = new HomeMain({
     heading: req.body.heading,
-    body: req.body.body
+    body: req.body.body,
+    image: req.body.image,
+    imageID: req.body.imageID,
   });
   homeMain = await homeMain.save();
 
@@ -30,9 +32,14 @@ router.put("/:id", [auth, validateObjectId], async (req, res) => {
 
   const homeMain = await HomeMain.findByIdAndUpdate(
     req.params.id,
-    { heading: req.body.heading, body: req.body.body },
     {
-      new: true
+      heading: req.body.heading,
+      body: req.body.body,
+      mage: req.body.image,
+      imageID: req.body.imageID,
+    },
+    {
+      new: true,
     }
   );
 
