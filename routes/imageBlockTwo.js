@@ -1,13 +1,13 @@
 const validateObjectId = require("../middleware/validateObjectId");
 const auth = require("../middleware/auth");
 const admin = require("../middleware/admin");
-const { ImageBlock, validate } = require("../models/imageBlockTwo");
+const { ImageBlockTwo, validate } = require("../models/imageBlockTwo");
 const mongoose = require("mongoose");
 const express = require("express");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  const imageBlocks = await ImageBlock.find().select("-__v");
+  const imageBlocks = await ImageBlockTwo.find().select("-__v");
   res.send(imageBlocks);
 });
 
@@ -15,7 +15,7 @@ router.post("/", auth, async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  let imageBlock = new ImageBlock({
+  let imageBlock = new ImageBlockTwo({
     image: req.body.image,
   });
   imageBlock = await imageBlock.save();
@@ -27,7 +27,7 @@ router.put("/:id", [auth, validateObjectId], async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  const imageBlock = await ImageBlock.findByIdAndUpdate(
+  const imageBlock = await ImageBlockTwo.findByIdAndUpdate(
     req.params.id,
     { image: req.body.image },
     {
@@ -44,7 +44,7 @@ router.put("/:id", [auth, validateObjectId], async (req, res) => {
 });
 
 router.delete("/:id", [auth, admin, validateObjectId], async (req, res) => {
-  const imageBlock = await ImageBlock.findByIdAndRemove(req.params.id);
+  const imageBlock = await ImageBlockTwo.findByIdAndRemove(req.params.id);
 
   if (!imageBlock)
     return res
@@ -55,7 +55,7 @@ router.delete("/:id", [auth, admin, validateObjectId], async (req, res) => {
 });
 
 router.get("/:id", validateObjectId, async (req, res) => {
-  const imageBlock = await ImageBlock.findById(req.params.id).select("-__v");
+  const imageBlock = await ImageBlockTwo.findById(req.params.id).select("-__v");
 
   if (!imageBlock)
     return res
