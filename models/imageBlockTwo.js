@@ -1,13 +1,13 @@
 const Joi = require("joi");
 const mongoose = require("mongoose");
 
-const imageBlockTwoSchema = new mongoose.Schema({
+const ImageBlockTwoSchema = new mongoose.Schema({
   image: {
     type: String,
   },
 });
 
-const ImageBlockTwo = mongoose.model("ImageBlockTwo", imageBlockTwoSchema);
+const imageBlockTwo = mongoose.model("imageBlockTwo", ImageBlockTwoSchema);
 
 function validateEvent(imageBlock) {
   const schema = {
@@ -18,5 +18,5 @@ function validateEvent(imageBlock) {
 }
 
 exports.ImageBlockTwoSchema = ImageBlockTwoSchema;
-exports.ImageBlockTwo = ImageBlockTwo;
+exports.imageBlockTwo = imageBlockTwo;
 exports.validate = validateEvent;
