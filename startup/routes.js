@@ -5,6 +5,7 @@ const contactRequest = require("../routes/contactRequest");
 const calendar = require("../routes/calendar");
 const gallery = require("../routes/gallery");
 const homeMain = require("../routes/homeMain");
+const imageBlock2 = require("../routes/imageBlock2");
 const imageBlock = require("../routes/imageBlock");
 const events = require("../routes/events");
 const users = require("../routes/users");
@@ -23,6 +24,7 @@ module.exports = function (app) {
   app.use("/api/calendar", calendar);
   app.use("/api/gallery", gallery);
   app.use("/api/homeMain", homeMain);
+  app.use("/api/imageBlock2", imageBlock2);
   app.use("/api/imageBlock", imageBlock);
   app.use("/api/navintro", navintro);
   app.use("/api/newsArticle", newsArticle);
