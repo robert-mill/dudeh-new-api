@@ -17,6 +17,7 @@ router.post("/", auth, async (req, res) => {
 
   let newsArticle = new NewsArticle({
     heading: req.body.heading,
+    image: req.body.image,
     newsArticle: req.body.newsArticle,
   });
   newsArticle = await newsArticle.save();
@@ -30,7 +31,11 @@ router.put("/:id", [auth, validateObjectId], async (req, res) => {
 
   const newsArticle = await NewsArticle.findByIdAndUpdate(
     req.params.id,
-    { heading: req.body.heading, newsArticle: req.body.newsArticle },
+    {
+      heading: req.body.heading,
+      newsArticle: req.body.newsArticle,
+      image: req.body.image,
+    },
     {
       new: true,
     }
