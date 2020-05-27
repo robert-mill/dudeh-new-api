@@ -1,7 +1,7 @@
 const Joi = require("joi");
 const mongoose = require("mongoose");
 
-const eventSchema = new mongoose.Schema({
+const homeSchema = new mongoose.Schema({
   heading: {
     type: String,
   },
@@ -11,24 +11,24 @@ const eventSchema = new mongoose.Schema({
   image: {
     type: String,
   },
-  imageID: {
+  caption: {
     type: String,
   },
 });
 
-const Events = mongoose.model("Events", eventSchema);
+const Home = mongoose.model("Home", homeSchema);
 
-function validateEvent(event) {
+function validateHome(home) {
   const schema = {
     heading: Joi.string().allow("").optional(),
     body: Joi.string().allow("").optional(),
     image: Joi.string().allow("").optional(),
-    imageID: Joi.string().allow("").optional(),
+    caption: Joi.string().allow("").optional(),
   };
 
-  return Joi.validate(event, schema);
+  return Joi.validate(home, schema);
 }
 
-exports.eventSchema = eventSchema;
-exports.Events = Events;
-exports.validate = validateEvent;
+exports.homeSchema = homeSchema;
+exports.Home = Home;
+exports.validate = validateHome;
