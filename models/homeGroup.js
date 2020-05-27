@@ -18,7 +18,7 @@ const homeGroupSchema = new mongoose.Schema({
 
 const HomeGroup = mongoose.model("HomeGroup", homeGroupSchema);
 
-function validateHome(homeGroup) {
+function validateHomeGroup(homeGroup) {
   const schema = {
     heading: Joi.string().allow("").optional(),
     body: Joi.string().allow("").optional(),
