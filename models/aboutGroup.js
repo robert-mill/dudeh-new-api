@@ -1,7 +1,7 @@
 const Joi = require("joi");
 const mongoose = require("mongoose");
 
-const aboutSchema = new mongoose.Schema({
+const aboutGroupSchema = new mongoose.Schema({
   heading: {
     type: String,
   },
@@ -16,9 +16,9 @@ const aboutSchema = new mongoose.Schema({
   },
 });
 
-const About = mongoose.model("About", aboutSchema);
+const AboutGroup = mongoose.model("AboutGroup", aboutGroupSchema);
 
-function validateAbout(about) {
+function validateAboutGroup(aboutGroup) {
   const schema = {
     heading: Joi.string().allow("").optional(),
     body: Joi.string().allow("").optional(),
@@ -26,9 +26,9 @@ function validateAbout(about) {
     caption: Joi.string().allow("").optional(),
   };
 
-  return Joi.validate(about, schema);
+  return Joi.validate(aboutGroup, schema);
 }
 
-exports.aboutSchema = aboutSchema;
-exports.About = About;
-exports.validate = validateAbout;
+exports.aboutGroupSchema = aboutGroupSchema;
+exports.AboutGroup = AboutGroup;
+exports.validate = validateAboutGroup;
