@@ -14,6 +14,12 @@ const divingGroupSchema = new mongoose.Schema({
   caption: {
     type: String,
   },
+  video: {
+    type: String,
+  },
+  videoCaption: {
+    type: String,
+  },
 });
 
 const DivingGroup = mongoose.model("DivingGroup", divingGroupSchema);
@@ -24,6 +30,8 @@ function validateDivingGroup(divingGroup) {
     body: Joi.string().allow("").optional(),
     image: Joi.string().allow("").optional(),
     caption: Joi.string().allow("").optional(),
+    video: Joi.string().allow("").optional(),
+    videoCaption: Joi.string().allow("").optional(),
   };
 
   return Joi.validate(divingGroup, schema);

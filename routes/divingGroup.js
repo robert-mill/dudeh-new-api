@@ -20,6 +20,8 @@ router.post("/", auth, async (req, res) => {
     body: req.body.body,
     image: req.body.image,
     caption: req.body.caption,
+    video: req.body.video,
+    videoCaption: req.body.videoCaption,
   });
   divingGroup = await divingGroup.save();
 
@@ -37,6 +39,8 @@ router.put("/:id", [auth, validateObjectId], async (req, res) => {
       body: req.body.body,
       image: req.body.image,
       caption: req.body.caption,
+      video: req.body.video,
+      videoCaption: req.body.videoCaption,
     },
     {
       new: true,
