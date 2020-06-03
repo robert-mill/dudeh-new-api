@@ -9,6 +9,7 @@ const divingGallery = require("../routes/divingGallery");
 const diving = require("../routes/diving");
 const event = require("../routes/event");
 const privacy = require("../routes/privacy");
+const resource = require("../routes/resource");
 const users = require("../routes/users");
 const auth = require("../routes/auth");
 const error = require("../middleware/error");
@@ -25,6 +26,7 @@ module.exports = function (app) {
   app.use("/api/home", home);
   app.use("/api/event", event);
   app.use("/api/privacy", privacy);
+  app.use("/api/resource", resource);
   app.use("/api/users", users);
   app.use("/api/auth", auth);
   app.use(error);
