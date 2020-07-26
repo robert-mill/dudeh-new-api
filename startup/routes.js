@@ -2,6 +2,7 @@ const express = require("express");
 const aboutGallery = require("../routes/aboutGallery");
 const aboutGroup = require("../routes/aboutGroup");
 const about = require("../routes/about");
+const bg = require("../bg");
 const homeGroup = require("../routes/homeGroup");
 const home = require("../routes/home");
 const divingGroup = require("../routes/divingGroup");
@@ -19,6 +20,7 @@ module.exports = function (app) {
   app.use("/api/aboutGallery", aboutGallery);
   app.use("/api/aboutGroup", aboutGroup);
   app.use("/api/about", about);
+  app.use("/api/bg", bg);
   app.use("/api/divingGallery", divingGallery);
   app.use("/api/divingGroup", divingGroup);
   app.use("/api/diving", diving);
