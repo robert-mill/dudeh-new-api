@@ -12,7 +12,7 @@ const gallerySchema = new mongoose.Schema({
 
 const Gallery = mongoose.model("Gallery", gallerySchema);
 
-function Gallery(gallery) {
+function validateGallery(gallery) {
   const schema = {
     image: Joi.string().allow("").optional(),
     caption: Joi.string().allow("").optional(),
@@ -23,4 +23,4 @@ function Gallery(gallery) {
 
 exports.gallerySchema = gallerySchema;
 exports.Gallery = Gallery;
-exports.validate = Gallery;
+exports.validate = validateGallery;
