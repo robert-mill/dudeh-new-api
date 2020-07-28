@@ -13,8 +13,6 @@ const divingGallery = require("../routes/divingGallery");
 const diving = require("../routes/diving");
 const event = require("../routes/event");
 
-const musicGroup = require("../routes/musicGroup");
-const musicGallery = require("../routes/musicGallery");
 const music = require("../routes/music");
 
 const nrlGroup = require("../routes/nrlGroup");
@@ -54,8 +52,6 @@ module.exports = function (app) {
   app.use("/api/nrlGroup", nrlGroup);
   app.use("/api/nrl", nrl);
 
-  app.use("/api/musicGallery", musicGallery);
-  app.use("/api/musicGroup", musicGroup);
   app.use("/api/music", music);
 
   app.use("/api/privacy", privacy);
