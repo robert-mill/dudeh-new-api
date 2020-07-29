@@ -22,9 +22,9 @@ const swimmingSchema = new mongoose.Schema({
   },
 });
 
-const Swiming = mongoose.model("Swiming", swimmingSchema);
+const Swimming = mongoose.model("Swimming", swimmingSchema);
 
-function validateSwiming(swimming) {
+function validateSwimming(swimming) {
   const schema = {
     heading: Joi.string().allow("").optional(),
     body: Joi.string().allow("").optional(),
@@ -38,5 +38,5 @@ function validateSwiming(swimming) {
 }
 
 exports.swimmingSchema = swimmingSchema;
-exports.Swiming = Swiming;
-exports.validate = validateSwiming;
+exports.Swimming = Swimming;
+exports.validate = validateSwimming;
