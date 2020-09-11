@@ -10,7 +10,7 @@ const actorSchema = new mongoose.Schema({
   },
 });
 
-const actor = mongoose.model("actor", actorSchema);
+const Actor = mongoose.model("actor", actorSchema);
 
 function validateactor(actor) {
   const schema = {
@@ -22,5 +22,5 @@ function validateactor(actor) {
 }
 
 exports.actorSchema = actorSchema;
-exports.actor = actor;
+exports.Actor = Actor;
 exports.validate = validateactor;
