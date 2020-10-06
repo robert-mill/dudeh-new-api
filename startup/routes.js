@@ -5,6 +5,8 @@ const about = require("../routes/about");
 const actor = require("../routes/actor");
 const bg = require("../routes/bg");
 
+const cv = require("../routes/cv");
+
 const gallery = require("../routes/gallery");
 
 const homeGroup = require("../routes/homeGroup");
@@ -21,6 +23,8 @@ const nrlGallery = require("../routes/nrlGallery");
 const nrl = require("../routes/nrl");
 
 const privacy = require("../routes/privacy");
+
+const qualifications = require("../routes/qualifications");
 const resource = require("../routes/resource");
 
 const rugbyGroup = require("../routes/rugbyGroup");
@@ -32,6 +36,7 @@ const swimmingGallery = require("../routes/swimmingGallery");
 const swimming = require("../routes/swimming");
 
 const users = require("../routes/users");
+const workExperience = require("../routes/workexperience");
 const auth = require("../routes/auth");
 const error = require("../middleware/error");
 
@@ -42,6 +47,9 @@ module.exports = function (app) {
   app.use("/api/about", about);
   app.use("/api/actor", actor);
   app.use("/api/bg", bg);
+
+  app.use("/api/cv", cv);
+
   app.use("/api/divingGallery", divingGallery);
   app.use("/api/divingGroup", divingGroup);
   app.use("/api/diving", diving);
@@ -57,6 +65,8 @@ module.exports = function (app) {
   app.use("/api/music", music);
 
   app.use("/api/privacy", privacy);
+
+  app.use("/api/qualifications", qualifications);
   app.use("/api/resource", resource);
 
   app.use("/api/rugbyGallery", rugbyGallery);
@@ -68,6 +78,8 @@ module.exports = function (app) {
   app.use("/api/swimming", swimming);
 
   app.use("/api/users", users);
+  app.use("/api/workExperience", workExperience);
+
   app.use("/api/auth", auth);
   app.use(error);
 };
