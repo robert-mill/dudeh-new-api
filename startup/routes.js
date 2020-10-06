@@ -20,11 +20,11 @@ const interests = require("../routes/interests");
 
 const music = require("../routes/music");
 
-const nlCreate = require("../pdfindex");
+//const nlCreate = require("../pdfindex");
 
 const nrlGroup = require("../routes/nrlGroup");
 const nrlGallery = require("../routes/nrlGallery");
-//const nrl = require("../routes/nrl");
+const nrl = require("../routes/nrl");
 
 const privacy = require("../routes/privacy");
 
