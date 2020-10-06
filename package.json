@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "bcrypt": "^4.0.1",
+    "body-parser": "^1.19.0",
     "cloudinary": "^1.21.0",
     "cloudinary-core": "^2.8.2",
     "config": "^1.31.0",
@@ -15,6 +16,7 @@
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
     "fawn": "^2.1.5",
+    "html-pdf": "^2.2.0",
     "http-status-codes": "^1.4.0",
     "imagekit": "^3.0.4",
     "joi": "^14.3.1",
