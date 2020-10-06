@@ -24,7 +24,7 @@ const nlCreate = require("../pdfindex");
 
 const nrlGroup = require("../routes/nrlGroup");
 const nrlGallery = require("../routes/nrlGallery");
-const nrl = require("../routes/nrl");
+//const nrl = require("../routes/nrl");
 
 const privacy = require("../routes/privacy");
 
@@ -53,8 +53,8 @@ module.exports = function (app) {
   app.use("/api/bg", bg);
 
   app.use("/api/cv", cv);
-  app.use("/api/create-pdf", nlCreate);
-  app.use("/api/fetch-pdf", nlCreate);
+  // app.use("/api/create-pdf", nlCreate);
+  // app.use("/api/fetch-pdf", nlCreate);
   app.use("/api/divingGallery", divingGallery);
   app.use("/api/divingGroup", divingGroup);
   app.use("/api/diving", diving);
