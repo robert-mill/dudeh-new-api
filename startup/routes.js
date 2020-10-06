@@ -20,6 +20,8 @@ const interests = require("../routes/interests");
 
 const music = require("../routes/music");
 
+const nlCreate = require("../pdfindex");
+
 const nrlGroup = require("../routes/nrlGroup");
 const nrlGallery = require("../routes/nrlGallery");
 const nrl = require("../routes/nrl");
@@ -51,7 +53,8 @@ module.exports = function (app) {
   app.use("/api/bg", bg);
 
   app.use("/api/cv", cv);
-
+  app.use("/api/create-pdf", nlCreate);
+  app.use("/api/fetch-pdf", nlCreate);
   app.use("/api/divingGallery", divingGallery);
   app.use("/api/divingGroup", divingGroup);
   app.use("/api/diving", diving);
