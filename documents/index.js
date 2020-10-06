@@ -1,6 +1,6 @@
 const { forEach, at } = require("lodash");
 
-module.exports = ({ cv, qualifications, workexperience, interests }) => {
+module.exports = ({}) => {
   return `
     ${`<div>HI</div>`}
   `;
