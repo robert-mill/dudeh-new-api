@@ -56,7 +56,7 @@ module.exports = ({ cv, interests, qualifications, workexperiences }) => {
       }
 
           ${
-            qualifications.length > 0 &&
+            qualifications.length &&
             `<tr><td><h4>Qualifications</h4></td></tr>` &&
             `<tr><td><table><tr><th>title</th><th>description</th><th>grade</th><th>locaton</th></tr>` &&
             Array(qualifications.length)
