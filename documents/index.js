@@ -15,9 +15,8 @@ module.exports = ({ cv, interests, qualifications, workexperiences }) => {
     </head>
     <body><table><tbody>
        ${Object.keys(cv).forEach(function (key) {
-         var val = cv["heading"];
          {
-           `<tr><td>${val}</td></tr>`;
+           `<tr><td>${key}</td></tr>`;
          }
        })}
        </tbody></table></body></html>`}`;
