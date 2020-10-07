@@ -30,12 +30,10 @@ module.exports = ({ cv, interests, qualifications, workexperiences }) => {
         .split(0)
         .map(
           (m, i) =>
-            `<tr>
-          <td>
-            ${cv[i].heading && `<div class="cv-head">..${cv[i].heading}</div>`}
-            ${cv[i].body && `<div class="cv-body">--${cv[i].body}</div>`}
-          </td>
-        </tr>`
+            `<tr><td>
+            ${cv[i].heading && `<div class="cv-head">${cv[i].heading}</div>`}
+            ${cv[i].body && `<div class="cv-body">${cv[i].body}</div>`}
+          </td></tr>`
         )
         .join("")
     }
