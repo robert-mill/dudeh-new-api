@@ -22,7 +22,6 @@ module.exports = ({ cv, interests, qualifications, workexperiences }) => {
       </style>
     </head>
     <body>
-    ${qualifications.length}
     <table><tbody>
      
     ${
@@ -60,22 +59,25 @@ module.exports = ({ cv, interests, qualifications, workexperiences }) => {
           ${
             qualifications.length &&
             `<tr><td><h4>Qualifications</h4></td></tr>` &&
-            `<tr><td><table><tr><th>title</th><th>description</th><th>grade</th><th>locaton</th></tr>` &&
-            Array(qualifications.length)
-              .join(0)
-              .split(0)
-              .map(
-                (m, i) =>
-                  qualifications[i] &&
-                  `<tr key=${qualifications[i]._id}>
-              <td>${qualifications[i].title}</td>
-              <td>${qualifications[i].description}</td>
-              <td>${qualifications[i].grade}</td>
-              <td>${qualifications[i].location}</td>
-            </tr>`
-              )
-              .join("") &&
-            `</table><td></tr>`
+            `<tr>
+              <td>
+                <table><tbody>
+                  <tr><th>title</th><th>description</th><th>grade</th><th>locaton</th></tr>` &&
+                    Array(qualifications.length)
+                      .join(0)
+                      .split(0)
+                      .map(
+                        (m, i) =>
+                          qualifications[i] &&
+                          `<tr key=${qualifications[i]._id}>
+                      <td>${qualifications[i].title}</td>
+                      <td>${qualifications[i].description}</td>
+                      <td>${qualifications[i].grade}</td>
+                      <td>${qualifications[i].location}</td>
+                    </tr>`
+                      )
+                      .join("") &&
+            `</tbody></table><td></tr>`
           }
 
 
