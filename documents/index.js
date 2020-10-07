@@ -62,8 +62,8 @@ module.exports = ({ cv, interests, qualifications, workexperiences }) => {
             `<tr>
               <td>
                 <table><tbody>
-                  <tr><th>title</th><th>description</th><th>grade</th><th>locaton</th></tr>` &&
-                    Array(qualifications.length)
+                  <tr><th>title</th><th>description</th><th>grade</th><th>locaton</th></tr>
+                    ${Array(qualifications.length)
                       .join(0)
                       .split(0)
                       .map(
@@ -76,8 +76,8 @@ module.exports = ({ cv, interests, qualifications, workexperiences }) => {
                       <td>${qualifications[i].location}</td>
                     </tr>`
                       )
-                      .join("") &&
-            `</tbody></table><td></tr>`
+                      .join("")}
+            </tbody></table><td></tr>`
           }
 
 
