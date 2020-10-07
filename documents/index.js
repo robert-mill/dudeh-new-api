@@ -7,8 +7,11 @@ module.exports = ({ cv, interests, qualifications, workexperiences }) => {
         <title>Dennis Udeh</title> 
         
       <style>
+      table, tr, td, th{
+        border:none!important;
+      }
         table{
-          border:none;
+          
           border-collapse: collapse;
         }
       </style>
