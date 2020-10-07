@@ -61,7 +61,7 @@ module.exports = ({ cv, interests, qualifications, workexperiences }) => {
             `<tr><td><h4>Qualifications</h4></td></tr>` &&
             `<tr>
               <td>
-                <table><tbody>
+                <table style="border-collapse: collapse;"><tbody>
                   <tr><th>title</th><th>description</th><th>grade</th><th>locaton</th></tr>
                     ${Array(qualifications.length)
                       .join(0)
