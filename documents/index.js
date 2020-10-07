@@ -14,9 +14,11 @@ module.exports = ({ cv, interests, qualifications, workexperiences }) => {
       </style>
     </head>
     <body><table><tbody>
-        ${cv.foreach(function (index, el, arr) {
-          `<tr><td>${el.heading}</td></tr>
-          <tr><td>${el.body}</td></tr>`;
-        })}
-        </tbody></table></body></html>`}`;
+       ${Object.keys(cv).forEach(function (key) {
+         var val = cv[key];
+         {
+           `<tr><td>${val}</td></tr>`;
+         }
+       })}
+       </tbody></table></body></html>`}`;
 };
