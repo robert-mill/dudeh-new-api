@@ -32,8 +32,8 @@ module.exports = ({ cv, interests, qualifications, workexperiences }) => {
           (m, i) =>
             `<tr>
           <td>
-            ${cv[i].heading && `<div class="cv-head">${cv[i].heading}</div>`}
-            ${cv[i].body && `<div class="cv-body">${cv[i].body}</div>`}
+            ${cv[i].heading && `<div class="cv-head">..${cv[i].heading}</div>`}
+            ${cv[i].body && `<div class="cv-body">--${cv[i].body}</div>`}
           </td>
         </tr>`
         )
