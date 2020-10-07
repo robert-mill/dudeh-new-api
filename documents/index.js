@@ -14,23 +14,33 @@ module.exports = ({ cv, interests, qualifications, workexperiences }) => {
           
           border-collapse: collapse;
         }
+        .workexperiences-body{
+          table tr td{
+            border:1px solid rgba(0,0,0,0.8);
+            border-collapse: collapse;
+            padding:1rem;
+          }
+        }
       </style>
     </head>
     <body><table><tbody>
-    ${Array(cv.length)
-      .join(0)
-      .split(0)
-      .map(
-        (m, i) =>
-          cv[i] &&
-          `<tr key=${cv[i]._id}>
+     
+    ${
+      cv.length &&
+      Array(cv.length)
+        .join(0)
+        .split(0)
+        .map(
+          (m, i) =>
+            `<tr key=${cv[i]._id}>
           <td>
             <div class="cv-head">${cv[i].heading}</div>
             <div class="cv-body">${cv[i].body}</div>
           </td>
         </tr>`
-      )
-      .join("")}
+        )
+        .join("")
+    }
       ${
         workexperiences.length &&
         `<tr><td><h4Work Experience></h4></td></tr>` &&
@@ -39,9 +49,8 @@ module.exports = ({ cv, interests, qualifications, workexperiences }) => {
           .split(0)
           .map(
             (m, i) =>
-              workexperiences[i] &&
               `<tr key=${workexperiences[i]._id}>
-            <td>
+            <td >
               <div class="workexperiences-head">${workexperiences[i].heading}</div>
               <div class="workexperiences-body">${workexperiences[i].body}</div>
             </td>
