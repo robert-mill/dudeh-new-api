@@ -1,12 +1,22 @@
 const { forEach, at } = require("lodash");
-module.exports = () => {
+module.exports = ({ cv, interests, qualifications, workexperiences }) => {
   return `${`<!doctype html>
     <html>
       <head>
         <meta charset='utf-8'>
         <title>Dennis Udeh</title> 
         
-
+      <style>
+        table{
+          border:none;
+          border-collapse: collapse;
+        }
+      </style>
     </head>
-    <body><div>pdf</div></body></html>`}`;
+    <body><table><tbody>
+        ${cv.foreach(function (index, el, arr) {
+          `<tr><td>${cv.heading}</td></tr>
+          <tr><td>${cv.body}</td></tr>`;
+        })}
+        </tbody></table></body></html>`}`;
 };
