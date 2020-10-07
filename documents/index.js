@@ -15,8 +15,8 @@ module.exports = ({ cv, interests, qualifications, workexperiences }) => {
     </head>
     <body><table><tbody>
         ${cv.foreach(function (index, el, arr) {
-          `<tr><td>${cv.heading}</td></tr>
-          <tr><td>${cv.body}</td></tr>`;
+          `<tr><td>${cv[index].heading}</td></tr>
+          <tr><td>${cv[index].body}</td></tr>`;
         })}
         </tbody></table></body></html>`}`;
 };
