@@ -14,10 +14,19 @@ module.exports = ({ cv, interests, qualifications, workexperiences }) => {
       </style>
     </head>
     <body><table><tbody>
-       ${Object.keys(cv).forEach(function (key) {
-         {
-           `<tr><td>${key}</td></tr>`;
-         }
-       })}
+    ${Array(cv.length)
+      .join(0)
+      .split(0)
+      .map(
+        (m, i) =>
+          cv[i] &&
+          `<tr key=${cv[i]._id}>
+          <td>
+            <div class="cv-head">${cv[i].heading}</div>
+            <div class="cv-body">${cv[i].body}</div>
+          </td>
+        </tr>`
+      )
+      .join("")}
        </tbody></table></body></html>`}`;
 };
