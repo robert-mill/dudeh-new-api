@@ -21,7 +21,9 @@ module.exports = ({ cv, interests, qualifications, workexperiences }) => {
         }
       </style>
     </head>
-    <body><table><tbody>
+    <body>
+    ${qualifications.length}
+    <table><tbody>
      
     ${
       cv.length &&
@@ -78,7 +80,7 @@ module.exports = ({ cv, interests, qualifications, workexperiences }) => {
 
 
           ${
-            interests.length > 0 &&
+            interests.length &&
             `<tr><td><h4>Qualifications</h4></td></tr>` &&
             Array(interests.length)
               .join(0)
