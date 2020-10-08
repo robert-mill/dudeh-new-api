@@ -62,14 +62,14 @@ module.exports = ({ cv, interests, qualifications, workexperiences }) => {
             `<tr>
               <td>
                 <table style="border-collapse: collapse; width: 100%; border:1px solid rgba(200,200,200,0.4)"><tbody>
-                  <tr><th>title</th><th>description</th><th>grade</th><th>locaton</th></tr>
+                  <tr style="border-bottom:1px solid rgba(0,0,0,0.3)"><th>title</th><th>description</th><th>grade</th><th>locaton</th></tr>
                     ${Array(qualifications.length)
                       .join(0)
                       .split(0)
                       .map(
                         (m, i) =>
                           qualifications[i] &&
-                          `<tr key=${qualifications[i]._id} style="background-color:${i %2 === 0 ? "rgba(0,0,0,0.1)" : "rgba(255,255,255,0)" }>
+                          `<tr key=${qualifications[i]._id} style=${`background-color:${i %2 === 0 ? "rgba(0,0,0,0.1)" : "rgba(255,255,255,0)" }`}>
                       <td>${qualifications[i].title}</td>
                       <td>${qualifications[i].description}</td>
                       <td>${qualifications[i].grade}</td>
