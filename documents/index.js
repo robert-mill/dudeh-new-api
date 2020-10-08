@@ -40,8 +40,8 @@ module.exports = ({ cv, interests, qualifications, workexperiences }) => {
     }
       ${
         workexperiences.length &&
-        `<tr><td><h4Work Experience></h4></td></tr>` &&
-        Array(workexperiences.length)
+        `<tr><td><h4>Work Experience></h4></td></tr>
+        ${Array(workexperiences.length)
           .join(0)
           .split(0)
           .map(
@@ -53,7 +53,7 @@ module.exports = ({ cv, interests, qualifications, workexperiences }) => {
             </td>
           </tr>`
           )
-          .join("")
+          .join("")}`
       }
 
           ${
@@ -63,7 +63,7 @@ module.exports = ({ cv, interests, qualifications, workexperiences }) => {
               <td>
                 <table style="margin-top:1rem; border-collapse: collapse; width: 100%; border-bottom:1px solid rgba(0,0,0,0.3)"><tbody>
                 <tr><td><h4>Qualifications</h4></td></tr>
-                  <tr style="border-bottom:1px solid rgba(0,0,0,0.3)"><th>title</th><th>description</th><th>grade</th><th>locaton</th></tr>
+                  <tr style="border-bottom:1px solid rgba(0,0,0,0.3); color:rgba(100,100,100,0.4)"><th>Title</th><th>Description</th><th>Grade</th><th>Locaton</th></tr>
                     ${Array(qualifications.length)
                       .join(0)
                       .split(0)
