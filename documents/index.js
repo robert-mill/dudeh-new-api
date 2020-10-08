@@ -40,7 +40,7 @@ module.exports = ({ cv, interests, qualifications, workexperiences }) => {
     }
       ${
         workexperiences.length &&
-        `<tr><td><h4>Work Experience></h4></td></tr>
+        `<tr><td><h4>Work Experience</h4></td></tr>
         ${Array(workexperiences.length)
           .join(0)
           .split(0)
@@ -84,8 +84,10 @@ module.exports = ({ cv, interests, qualifications, workexperiences }) => {
 
           ${
             interests.length &&
-            `<tr><td><h4>Qualifications</h4></td></tr>` &&
-            Array(interests.length)
+
+
+            `<tr><td><h4>Personal Interests</h4></td></tr>
+            ${Array(interests.length)
               .join(0)
               .split(0)
               .map(
@@ -99,7 +101,7 @@ module.exports = ({ cv, interests, qualifications, workexperiences }) => {
             </tr>`
               )
               .join("")
-          }
+          }`}
 
         
        </tbody></table></body></html>`}`;
