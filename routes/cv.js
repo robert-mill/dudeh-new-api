@@ -18,6 +18,7 @@ router.post("/", auth, async (req, res) => {
   let cv = new Cv({
     heading: req.body.heading,
     body: req.body.body,
+    status: req.body.status? req.body.status: false,
   });
   cv = await cv.save();
 
@@ -33,6 +34,7 @@ router.put("/:id", [auth, validateObjectId], async (req, res) => {
     {
       heading: req.body.heading,
       body: req.body.body,
+      status: req.body.status? req.body.status: false,
     },
     {
       new: true,

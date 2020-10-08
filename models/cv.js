@@ -8,6 +8,9 @@ const cvSchema = new mongoose.Schema({
   body: {
     type: String,
   },
+  status:{
+    type: Boolean,
+  }
 });
 
 const Cv = mongoose.model("Cv", cvSchema);
@@ -16,6 +19,7 @@ function validateCv(cv) {
   const schema = {
     heading: Joi.string().allow("").optional(),
     body: Joi.string().allow("").optional(),
+    status: Joi.boolean().required(),
   };
 
   return Joi.validate(cv, schema);
