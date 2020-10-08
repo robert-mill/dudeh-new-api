@@ -63,7 +63,7 @@ module.exports = ({ cv, interests, qualifications, workexperiences }) => {
               <td>
                 <table style="margin-top:1rem; border-collapse: collapse; width: 100%; border-bottom:1px solid rgba(0,0,0,0.3)"><tbody>
                 <tr><td><h4>Qualifications</h4></td></tr>
-                  <tr style="border-bottom:1px solid rgba(0,0,0,0.3); color:rgba(100,100,100,0.4)"><th>Title</th><th>Description</th><th>Grade</th><th>Locaton</th></tr>
+                  <tr style="border-bottom:1px solid rgba(0,0,0,0.3); color:rgba(100,100,100,0.4); text-align:left;"><th>Title</th><th>Description</th><th>Grade</th><th>Locaton</th></tr>
                     ${Array(qualifications.length)
                       .join(0)
                       .split(0)
