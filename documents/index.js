@@ -58,10 +58,11 @@ module.exports = ({ cv, interests, qualifications, workexperiences }) => {
 
           ${
             qualifications.length &&
-            `<tr><td><h4>Qualifications</h4></td></tr>` &&
+           
             `<tr>
               <td>
-                <table style="border-collapse: collapse; width: 100%; border:1px solid rgba(200,200,200,0.4)"><tbody>
+                <table style="margin-top:1rem; border-collapse: collapse; width: 100%; border:1px solid rgba(200,200,200,0.4)"><tbody>
+                <tr><td><h4>Qualifications</h4></td></tr>
                   <tr style="border-bottom:1px solid rgba(0,0,0,0.3)"><th>title</th><th>description</th><th>grade</th><th>locaton</th></tr>
                     ${Array(qualifications.length)
                       .join(0)
