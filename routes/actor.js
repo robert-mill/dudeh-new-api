@@ -7,30 +7,32 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  const Actors = await Actor.find().select("-__v");
-  res.send(Actors);
+  const actors = await Actor.find().select("-__v");
+  res.send(actors);
 });
 
 router.post("/", auth, async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  let Actor = new Actor({
+  let actor = new Actor({
+   
     image: req.body.image,
     caption: req.body.caption,
   });
-  Actor = await Actor.save();
+  actor = await actor.save();
 
-  res.send(Actor);
+  res.send(actor);
 });
 
 router.put("/:id", [auth, validateObjectId], async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  const Actor = await Actor.findByIdAndUpdate(
+  const actor = await Actor.findByIdAndUpdate(
     req.params.id,
     {
+   
       image: req.body.image,
       caption: req.body.caption,
     },
@@ -39,23 +41,23 @@ router.put("/:id", [auth, validateObjectId], async (req, res) => {
     }
   );
 
-  if (!Actor)
-    return res.status(404).send("The Actor with the given ID was not found.");
+  if (!actor)
+    return res.status(404).send("The actor with the given ID was not found.");
 
-  res.send(Actor);
+  res.send(actor);
 });
 
 router.delete("/:id", [auth, admin, validateObjectId], async (req, res) => {
-  const Actor = await Actor.findByIdAndRemove(req.params.id);
+  const actor = await Actor.findByIdAndRemove(req.params.id);
 
-  if (!Actor)
-    return res.status(404).send("The Actor with the given ID was not found.");
+  if (!actor)
+    return res.status(404).send("The actor with the given ID was not found.");
 
-  res.send(Actor);
+  res.send(actor);
 });
 
 router.get("/:id", validateObjectId, async (req, res) => {
-  const actor = await actor.findById(req.params.id).select("-__v");
+  const actor = await Actor.findById(req.params.id).select("-__v");
 
   if (!actor)
     return res.status(404).send("The actor with the given ID was not found.");

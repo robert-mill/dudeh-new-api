@@ -2,6 +2,7 @@ const Joi = require("joi");
 const mongoose = require("mongoose");
 
 const actorSchema = new mongoose.Schema({
+ 
   image: {
     type: String,
   },
@@ -10,10 +11,11 @@ const actorSchema = new mongoose.Schema({
   },
 });
 
-const Actor = mongoose.model("actor", actorSchema);
+const Actor = mongoose.model("Actor", actorSchema);
 
-function validateactor(actor) {
+function validateActor(actor) {
   const schema = {
+   
     image: Joi.string().allow("").optional(),
     caption: Joi.string().allow("").optional(),
   };
@@ -23,4 +25,4 @@ function validateactor(actor) {
 
 exports.actorSchema = actorSchema;
 exports.Actor = Actor;
-exports.validate = validateactor;
+exports.validate = validateActor;
