@@ -2,8 +2,8 @@ const express = require("express");
 const aboutGallery = require("../routes/aboutGallery");
 const aboutGroup = require("../routes/aboutGroup");
 const about = require("../routes/about");
-
 const actorGallery = require("../routes/actorGallery");
+const actorGroup = require("../routes/actorGroup");
 const actor = require("../routes/actor");
 const bg = require("../routes/bg");
 
@@ -49,6 +49,7 @@ module.exports = function (app) {
   app.use(express.json());
   app.use("/api/aboutGallery", aboutGallery);
   app.use("/api/aboutGroup", aboutGroup);
+  app.use("/api/actorGroup", actorGroup);
   app.use("/api/actorGallery", actorGallery);
   app.use("/api/about", about);
   app.use("/api/actor", actor);
@@ -59,6 +60,7 @@ module.exports = function (app) {
   app.use("/api/divingGroup", divingGroup);
   app.use("/api/diving", diving);
   app.use("/api/holidayGallery", holidayGallery);
+  
   app.use("/api/home", home);
   app.use("/api/gallery", gallery);
   app.use("/api/homeGroup", homeGroup);
