@@ -3,6 +3,7 @@ const aboutGallery = require("../routes/aboutGallery");
 const aboutGroup = require("../routes/aboutGroup");
 const about = require("../routes/about");
 const actor = require("../routes/actor");
+const actorGallery = require("../routes/actorGallery");
 const bg = require("../routes/bg");
 
 const cv = require("../routes/cv");
@@ -46,6 +47,7 @@ module.exports = function (app) {
   app.use(express.json());
   app.use("/api/aboutGallery", aboutGallery);
   app.use("/api/aboutGroup", aboutGroup);
+  app.use("/api/actorGallery", actorGallery);
   app.use("/api/about", about);
   app.use("/api/actor", actor);
   app.use("/api/bg", bg);
