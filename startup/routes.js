@@ -12,6 +12,7 @@ const cv = require("../routes/cv");
 const gallery = require("../routes/gallery");
 
 const homeGroup = require("../routes/homeGroup");
+const holidayGallery = require("../routes/holidayGallery");
 const home = require("../routes/home");
 const divingGroup = require("../routes/divingGroup");
 const divingGallery = require("../routes/divingGallery");
@@ -57,6 +58,7 @@ module.exports = function (app) {
   app.use("/api/divingGallery", divingGallery);
   app.use("/api/divingGroup", divingGroup);
   app.use("/api/diving", diving);
+  app.use("/api/holidayGallery", holidayGallery);
   app.use("/api/home", home);
   app.use("/api/gallery", gallery);
   app.use("/api/homeGroup", homeGroup);
