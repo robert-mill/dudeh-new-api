@@ -2,8 +2,9 @@ const express = require("express");
 const aboutGallery = require("../routes/aboutGallery");
 const aboutGroup = require("../routes/aboutGroup");
 const about = require("../routes/about");
-const actor = require("../routes/actor");
+
 const actorGallery = require("../routes/actorGallery");
+const actor = require("../routes/actor");
 const bg = require("../routes/bg");
 
 const cv = require("../routes/cv");
