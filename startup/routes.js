@@ -21,8 +21,11 @@ const divingGallery = require("../routes/divingGallery");
 const diving = require("../routes/diving");
 const event = require("../routes/event");
 
-const interests = require("../routes/interests");
+const formula = require("../routes/formula");
+const formulaVideo = require("../routes/formulaVideo");
 
+const interests = require("../routes/interests");
+const maths = require("../routes/maths");
 const music = require("../routes/music");
 const nlCreate = require("../pdfindex");
 const nrlGroup = require("../routes/nrlGroup");
@@ -61,6 +64,10 @@ module.exports = function (app) {
   app.use("/api/divingGallery", divingGallery);
   app.use("/api/divingGroup", divingGroup);
   app.use("/api/diving", diving);
+
+
+  app.use("/api/formula", formula);
+  app.use("/api/formulaVideo", formulaVideo);
   
   app.use("/api/holidayGallery", holidayGallery);
   app.use("/api/holidayGroup", holidayGroup);
@@ -79,7 +86,7 @@ module.exports = function (app) {
   app.use("/api/nrlGallery", nrlGallery);
   app.use("/api/nrlGroup", nrlGroup);
   app.use("/api/nrl", nrl);
-
+  app.use("/api/maths", maths);
   app.use("/api/music", music);
 
   app.use("/api/privacy", privacy);
