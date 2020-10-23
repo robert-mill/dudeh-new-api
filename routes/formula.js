@@ -18,6 +18,8 @@ router.post("/", auth, async (req, res) => {
 
   let event = new Formula({
     articleId: req.body.articleId,
+    heading: req.body.heading,
+    description: req.body.description,
     formula: req.body.formula,
   });
   event = await event.save();
@@ -32,6 +34,8 @@ router.put("/:id", [auth], async (req, res) => {
     req.params.id,
     {
       articleId: req.body.articleId,
+      heading: req.body.heading,
+      description: req.body.description,
       formula: req.body.formula,
     
     },
