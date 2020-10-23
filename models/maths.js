@@ -11,6 +11,9 @@ const mathSchema = new mongoose.Schema({
   image: {
     type: String,
   },
+  imageId:{
+      type: String,
+  },
   caption: {
     type: String,
   },
@@ -23,6 +26,7 @@ function validateMath(math) {
     heading: Joi.string().allow("").optional(),
     body: Joi.string().allow("").optional(),
     image: Joi.string().allow("").optional(),
+    imageId: Joi.string().allow("").optional(),
     caption: Joi.string().allow("").optional(),
   };
 

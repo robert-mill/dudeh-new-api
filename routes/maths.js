@@ -19,6 +19,7 @@ router.post("/", auth, async (req, res) => {
     heading: req.body.heading,
     body: req.body.body,
     image: req.body.image,
+    imageId: req.body.imageId,
     caption: req.body.caption,
   });
   math = await math.save();
@@ -36,6 +37,7 @@ router.put("/:id", [auth, validateObjectId], async (req, res) => {
       heading: req.body.heading,
       body: req.body.body,
       image: req.body.image,
+      imageId: req.body.imageId,
       caption: req.body.caption,
     },
     {
