@@ -2,6 +2,9 @@ const Joi = require("joi");
 const mongoose = require("mongoose");
 
 const holidayGallerySchema = new mongoose.Schema({
+  name:{
+    type: String,
+  },
   image: {
     type: String,
   },
@@ -14,6 +17,7 @@ const HolidayGallery = mongoose.model("HolidayGallery", holidayGallerySchema);
 
 function validateHolidayGallery(holidayGallery) {
   const schema = {
+    name: Joi.string().allow("").optional(),
     image: Joi.string().allow("").optional(),
     caption: Joi.string().allow("").optional(),
   };

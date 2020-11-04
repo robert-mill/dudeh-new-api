@@ -16,7 +16,10 @@ router.post("/", auth, async (req, res) => {
   if (error) return res.status(400).send(error.details[0].message);
 
   let music = new Music({
+
+    genre: req.body.genre,
     caption: req.body.caption,
+    image: req.body.image,
     music: req.body.music,
   });
   music = await music.save();
@@ -31,7 +34,9 @@ router.put("/:id", [auth, validateObjectId], async (req, res) => {
   const music = await Music.findByIdAndUpdate(
     req.params.id,
     {
+      genre: req.body.genre,
       caption: req.body.caption,
+      image: req.body.image,
       music: req.body.music,
     },
     {

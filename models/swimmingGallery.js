@@ -2,6 +2,9 @@ const Joi = require("joi");
 const mongoose = require("mongoose");
 
 const swimminghGallerySchema = new mongoose.Schema({
+  name:{
+    type: String,
+  },
   image: {
     type: String,
   },
@@ -17,6 +20,7 @@ const SwimmingGallery = mongoose.model(
 
 function validateSwimmingGallery(swimminghGallery) {
   const schema = {
+    name: Joi.string().allow("").optional(),
     image: Joi.string().allow("").optional(),
     caption: Joi.string().allow("").optional(),
   };

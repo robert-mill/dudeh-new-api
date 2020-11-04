@@ -16,6 +16,7 @@ router.post("/", auth, async (req, res) => {
   if (error) return res.status(400).send(error.details[0].message);
 
   let aboutGallery = new AboutGallery({
+    name: req.body.name,
     image: req.body.image,
     caption: req.body.caption,
   });
@@ -31,6 +32,7 @@ router.put("/:id", [auth, validateObjectId], async (req, res) => {
   const aboutGallery = await AboutGallery.findByIdAndUpdate(
     req.params.id,
     {
+      name: req.body.name,
       image: req.body.image,
       caption: req.body.caption,
     },

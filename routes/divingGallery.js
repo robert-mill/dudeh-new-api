@@ -16,6 +16,7 @@ router.post("/", auth, async (req, res) => {
   if (error) return res.status(400).send(error.details[0].message);
 
   let divingGallery = new DivingGallery({
+    name: req.body.name,
     image: req.body.image,
     caption: req.body.caption,
   });
@@ -31,6 +32,7 @@ router.put("/:id", [auth, validateObjectId], async (req, res) => {
   const divingGallery = await DivingGallery.findByIdAndUpdate(
     req.params.id,
     {
+      name: req.body.name,
       image: req.body.image,
       caption: req.body.caption,
     },
