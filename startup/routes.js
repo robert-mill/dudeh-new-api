@@ -34,6 +34,10 @@ const nrl = require("../routes/nrl");
 
 const privacy = require("../routes/privacy");
 
+const profileGallery = require("../routes/profileGallery");
+const profileGroup = require("../routes/profileGroup");
+const profile = require("../routes/profile");
+
 const qualifications = require("../routes/qualifications");
 const resource = require("../routes/resource");
 
@@ -54,10 +58,12 @@ module.exports = function (app) {
   app.use(express.json());
   app.use("/api/aboutGallery", aboutGallery);
   app.use("/api/aboutGroup", aboutGroup);
+  app.use("/api/about", about);
+  
   app.use("/api/actorGroup", actorGroup);
   app.use("/api/actorGallery", actorGallery);
-  app.use("/api/about", about);
   app.use("/api/actor", actor);
+
   app.use("/api/bg", bg);
 
   app.use("/api/cv", cv);
@@ -90,6 +96,10 @@ module.exports = function (app) {
   app.use("/api/music", music);
 
   app.use("/api/privacy", privacy);
+
+  app.use("/api/profileGroup", profileGroup);
+  app.use("/api/profileGallery", profileGallery);
+  app.use("/api/profile", profile);
 
   app.use("/api/qualifications", qualifications);
   app.use("/api/resource", resource);
