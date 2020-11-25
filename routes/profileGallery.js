@@ -19,6 +19,7 @@ router.post("/", auth, async (req, res) => {
     name: req.body.name,
     image: req.body.image,
     caption: req.body.caption,
+    order: req.body.order,
   });
   profileGallery = await profileGallery.save();
 
@@ -35,6 +36,7 @@ router.put("/:id", [auth, validateObjectId], async (req, res) => {
       name: req.body.name,
       image: req.body.image,
       caption: req.body.caption,
+      order: req.body.order,
     },
     {
       new: true,
