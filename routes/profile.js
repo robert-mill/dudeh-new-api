@@ -7,7 +7,7 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  const profiles = awaitProfile.find().select("-__v");
+  const profiles = await Profile.find().select("-__v");
   res.send(profiles);
 });
 
@@ -15,7 +15,7 @@ router.post("/", auth, async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  let profile = newProfile({
+  let profile = new Profile({
    
     image: req.body.image,
     caption: req.body.caption,
