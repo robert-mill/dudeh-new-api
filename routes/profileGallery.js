@@ -7,7 +7,9 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  const profileGallerys = await ProfileGallery.find().select("-__v");
+
+  var mysort = { order: 1 };
+   const profileGallerys = await ProfileGallery.find().sort(mysort).select("-__v");
   res.send(profileGallerys);
 });
 
